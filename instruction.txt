@@ -1,0 +1,21 @@
+﻿MybestPortfolio ------- Dossier qui doit être présent pour le portfolio.
+    - .gitignore ===> gitignore.io et le faire générer
+    - .editorconfig
+    - src
+        - app ------ la où il y a du php
+        - public
+            - css
+            - js
+            - images
+            index.html
+            experience.html
+            pro.html
+            skills.html
+            realisation.html
+            contact.html
+    - LiCENSE.txt
+    - readme.md
+    - Vagrantfile
+    
+https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+
