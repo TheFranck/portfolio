@@ -1,11 +1,65 @@
 <?php
 	$title = "François SARIN | Développeur Web & Infographiste junior";
+	
+	$menuList = [
+		[
+		"content" =>"Accueil",
+		"link" => "#accueil",
+		"id" => "accueil",
+		],
+
+		[
+		"content" =>"Mes compétences",
+		"link" => "#competence-section",
+		"id" => "compétence",
+		],
+
+		[
+		"content" =>"Mes formations",
+		"link" => "#formation-section",
+		"id" => "formation",
+		],
+		
+		[
+		"content" =>"Mes réalisations",
+		"link" => "#realisation",
+		"id" => "realisation",
+		],
+	];
+
+	$h2 = [
+		"à propos",
+		"Mes compétences",
+		"Mes formation",
+	];
+
+	$paragraphe = [
+		"Voici mes super compétences de ouf, guedin",
+		"Depuis le temps que je ne suis pas retourné à l'école",
+	];
+
+
 	$qualities = [
 		"Travailleur",
 		"Sympathique",
 		"Créatif",
 		"Curieux",
 	];
+
+	$contentPropos = [
+		"Bonjour, je m'appelle François SARIN et je suis actuellement en formation Développeur web et mobile à l'IT-Akademy.",
+		"Après l'obtention de mon Baccalauréat Science tertiaire et technologies option Informatique de gestion, j'ai occupé le poste de préparateur de commandes et de magasinier pendant plusieurs années.",
+		"Suite à un licensiement économique survenu en 2014, on m'a donné l'opportunité d'effectuer une formation de Chef de projet multimédia spécialisation webdesigner à l'IESA multimédia à Paris en 2015 et qui m'a énormement plu.",
+		"Je recherche activement un stage d'une durée de 2 mois afin de valider ma formation de développeur web et mobile et, par la suite, un contrat en alternance pour la formation de développeur FullStack.",
+	];
+
+	$identity = [
+		"Nom" => "Francois SARIN",
+		"E-Mail" => "f-sarin@sfr.fr",
+		"Téléphone" => "06.22.24.54.75",
+	];
+
+	$footerContent = "François SARIN | 2017.IT-Akademy | Tout droit réservé.";
 
 ?>
 <!DOCTYPE html>
@@ -30,11 +84,14 @@
 						<a href="#"><h1><img src="img/background/logo-fsarin.png" alt="Logo de mon site web François SARIN"></h1></a>
 					</div>
 						<nav class="navbar">
+							
+							
 							<ul id="menu">
-								<li><a class="scroll hvr-underline-from-left" id="aboutMe" href="#accueil">Accueil</a></li>
-								<li><a class="scroll hvr-underline-from-left" id="competence" href="#competence-section">Mes compétences</a></li>
-								<li><a class="scroll hvr-underline-from-left" id="formation" href="#formation-section">Mes formations</a></li>
-								<li><a class="scroll hvr-underline-from-left" id="realisation" href="#">Mes réalisations</a></li>
+								<?php
+								foreach ($menuList as $value) {
+									echo '<li><a class="scroll hvr-underline-from-left" id="'. $value["id"] . '" href="' . $value["link"] . '">' .  $value["content"] . '</a></li>';
+								}
+							?>	
 							</ul>					
 						</nav>
 				</div>
@@ -55,16 +112,20 @@
 		<div class="container">
 			<div class="row container-presentation">
 				<div class="presentation-text">
-				<h2>à propos</h2>
-				<p>Bonjour, je m'appelle François SARIN et je suis actuellement en formation Développeur web et mobile à l'IT-Akademy.</p>
-				<p>Après l'obtention de mon Baccalauréat Science tertiaire et technologies option Informatique de gestion, j'ai occupé le poste de préparateur de commandes et de magasinier pendant plusieurs années.</p>
-				<p>Suite à un licensiement économique survenu en 2014, on m'a donné l'opportunité d'effectuer une formation de Chef de projet multimédia spécialisation webdesigner à l'IESA multimédia à Paris en 2015 et qui m'a énormement plu.</p>
-				<p> Je recherche activement un stage d'une durée de 2 mois afin de valider ma formation de développeur web et mobile et, par la suite, un contrat en alternance pour la formation de développeur FullStack. </p>
-
+				<h2><?php echo $h2[0]; ?></h2>
+				<?php 
+					foreach ($contentPropos as $value) 
+					{
+						echo "<p>" . $value . "</p>";
+					};
+				?>
 				<ul>
-					<li>Nom : François SARIN</li>
-					<li>E-Mail : <a href="mailto:f-sarin@sfr.fr">f-sarin@sfr.fr</a></li>
-					<li>Téléphone : 06.22.24.54.75</li>
+					<?php 
+					foreach ($identity as $key => $value) 
+					{
+						echo "<li>" . $key . " " . ":" . " " . $value . "</li>";
+					};
+					?>
 				</ul>
 				</div>
 			<img src="img/realisation/portrait.png" alt="Illustration de François SARIN en guise de photo de présentation">
@@ -75,16 +136,12 @@
 	<div class="container">
 		<div class="row">
 		<div class="container-competence">
-		<h2>Mes Compétences</h2>
-		<p>Voici mes super compétences de ouf, guedin</p>
+		<h2><?php echo $h2[1]; ?></h2>
+		<p><?php echo $paragraphe[0]; ?></p>
 		</div>
 			<div>	
 				<ul>
-					<?php 
-					foreach ($qualities as $value) {
-						echo "<li>" . $value . "</li>";
-					}
-					?>
+					
 				</ul>	
 			</div>	
 		</div>
@@ -94,8 +151,8 @@
 	<div class="container">
 		<div class="row">
 		<div class="container-formation">
-		<h2>Mes Formations</h2>
-		<p>Depuis le temps que je ne suis pas retourné à l'école</p>
+		<h2><?php echo $h2[2]; ?></h2>
+		<p><?php echo $paragraphe[1]; ?></p>
 		</div>
 			<div>	
 				
@@ -106,7 +163,7 @@
 
 	<footer>
 		
-		<p> François SARIN | 2017.IT-Akademy | Tout droit réservé.</p>
+		<p> <?php echo $footerContent; ?></p>
 
 	</footer>
 
