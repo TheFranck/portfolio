@@ -1,0 +1,42 @@
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: lightcoral;
+}
+
+label {
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+input {
+    font-size: 18px;
+    width: 20%;
+}
+
+.btn {
+    font-size: 20px;
+    background-color: green;
+    text-transform:uppercase; 
+}
+
+footer {
+
+    background-color: lightseagreen;
+    margin-top: 650px;
+    height: 200px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cancel {
+    font-size: 20px;
+    background: lightyellow;
+    width: 20%;
+    text-transform: uppercase;
+}
